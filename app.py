@@ -46,6 +46,7 @@ class FeedbackForm(FlaskForm):
 def index():
     return render_template("index.html", menu=menu)
 
+#Код из предыдущих заданий
 @app.route("/feedback", methods=["GET", "POST"])
 def feedback():
     form = FeedbackForm()
