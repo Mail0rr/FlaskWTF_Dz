@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Отзывы</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+</head>
+<body style="background-color: #f8f9fa; color: black; font-family: Arial, sans-serif;">
+
+<h1 class="my-4" style="font-size: 24px; margin-left: 20px;">Отзывы</h1>
+
+<table class="table table-striped table-bordered" style="width: 100%; background-color: white; color: black; font-size: 14px;">
+    <thead>
+    <tr>
+        <th style="width: 25%;">Пицца</th>
+        <th style="width: 60%;">Ингредиенты</th>
+        <th style="width: 15%;">Цена</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for item in menu %}
+    <tr>
+        <td>{{ item.pizza }}</td>
+        <td>{{ item.ingredients }}</td>
+        <td>{{ item.price }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+    <div class="mt-4">
+        <a href="/result" class="btn btn-primary">Посмотреть отзывы</a>
+        <a href="/feedback" class="btn btn-primary">Оставить отзыв</a>
+
+    </div>
+</body>
+</html>

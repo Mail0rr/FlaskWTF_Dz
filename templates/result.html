@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Отзывы</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css">
+</head>
+<body style="background-color: #f8f9fa; font-family: Arial, sans-serif;">
+    <div class="container py-5">
+        <h1 class="text-center mb-4">Отзывы наших клиентов</h1>
+
+        {% if feedbacks %}
+        <ul class="list-group">
+            {% for feedback in feedbacks %}
+                <li class="list-group-item">
+                    <strong>Имя > </strong> {{ feedback["visitor_name"] }}<br>
+                    <strong>Пицца > </strong> {{ feedback["pizza_name"] }}<br>
+                    <strong>Обслуживание > </strong> {{ feedback["service"] }}<br>
+                    <strong>Отзыв > </strong> {{ feedback["comment"] }}
+                </li>
+            {% endfor %}
+        </ul>
+        {% else %}
+            <p class="text-center"А НЕМА У НАС КЛИЕНТОВ</p>
+        {% endif %}
+
+        <div class="text-center mt-4">
+            <a href="/" class="btn btn-primary">На главную</a>
+        </div>
+    </div>
+</body>
+</html>
